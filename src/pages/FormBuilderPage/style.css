@@ -1,0 +1,79 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~formiojs/dist/formio.full.min.css';
+.form-builder-container {
+    display: flex;
+    max-height: 85vh;
+    min-height: 85vh;
+    margin-top: 2rem;
+}
+
+.form-builder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.form-config {
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-config pre {
+    max-height: 100%;
+    overflow-x: auto;
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 25rem;
+    width: 25rem;
+    max-width: 25rem;
+    box-shadow: 1px 1px 8px 0px #33333340 inset;
+    -webkit-box-shadow: 1px 1px 8px 0px #33333340 inset;
+    -moz-box-shadow: 1px 1px 8px 0px #33333340 inset;
+    min-height: 100%;
+}
+
+
+/* Firefox */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #09499C #DFE9EB;
+}
+
+
+/* Chrome, Edge and Safari */
+
+*::-webkit-scrollbar {
+    height: 7px;
+    width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #DFE9EB;
+}
+
+*::-webkit-scrollbar-track:hover {
+    background-color: #DFE9EB;
+}
+
+*::-webkit-scrollbar-track:active {
+    background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #0b5ed7;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #4C83A3;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background-color: #4C83A3;
+}

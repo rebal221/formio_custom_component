@@ -1,0 +1,45 @@
+.card {
+    border: 1px solid rgb(208 208 208);
+    padding: 20px;
+    display: flex;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+    min-height: 25rem;
+    min-width: 30rem;
+    background-color: #e8e8e8;
+    border-radius: 1rem;
+    box-shadow: 1px 5px 15px -5px darkgray;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 10rem;
+    margin-bottom: 2rem;
+}
+
+.description {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    height: 3rem;
+    box-shadow: 1px 4px 5px 0px darkgray;
+    border: 1px solid #e2e2e2;
+}
+
+.buttons button:hover {
+    border: 1px solid #4267b0;
+}
