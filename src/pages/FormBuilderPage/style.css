@@ -36,6 +36,22 @@
     min-height: 100%;
 }
 
+.accordion-prim {
+    cursor: pointer;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    margin-bottom: 5px;
+}
+
+.accordion-ans {
+    padding: 6px;
+}
+
 
 /* Firefox */
 

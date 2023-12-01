@@ -1,4 +1,4 @@
-import AccordionCustomComp from "./Accordion/index";
+import AccordionCustomComp from "./Accordion";
 
 export default {
     AccordionCustomComp

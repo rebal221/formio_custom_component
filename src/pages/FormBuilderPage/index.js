@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { FormBuilder, Components } from '@formio/react';
 import './style.css';
-import components from "../../customcomponents/index";
+import AccordionCustomComp from "../../customcomponents/Accordion";
 
-Components.setComponents(components);
+// Components.setComponents(components);
+Components.setComponent('accordionCustomComp', AccordionCustomComp);
 
 const FormBuilderPage = () => {
     const [formConfig, setFormConfig] = useState({
@@ -28,7 +29,7 @@ const FormBuilderPage = () => {
                         builder: {
                             basic: {
                                 components: {
-                                    toggleCustomComp: true
+                                    AccordionCustomComp: true
                                 }
                             },
                             advanced: false
