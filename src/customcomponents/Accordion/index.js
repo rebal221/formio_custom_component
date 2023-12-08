@@ -1,9 +1,53 @@
+// class Test extends Component {
+//   constructor(props) {
+//     super(props);
+//   }
+//   render() {
+//     return (
+//       <div>
+//         sssdddd
+//       </div>
+//     );
+//   }
+
+// }
+
+// class DnDTest extends NestedComponent {
+//   static get builderInfo() {
+//     return {
+//       title: "Accordion",
+//       icon: "square",
+//       group: "basic",
+//       documentation: "",
+//       weight: -10,
+//       schema: Accordion.schema(),
+//     };
+//   }
+
+//   static schema() {
+//     return ReactComponent.schema({
+//       type: "test",
+//       label: "Default",
+//       components: [],
+//     });
+//   }
+
+//   attachReact(element) {
+//     return ReactDOM.render(
+//       <Test />,
+//       element
+//     );
+//   }
+// } 
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { ReactComponent } from "@formio/react";
-import settingsForm from "./Accordion.settingsForm";
-
-const AccordionCustomComp = class extends Component {
+import settingsForm from "./Accordian.settingsForm";
+import NestedComponent from 'formiojs/components/_classes/nested/NestedComponent';
+import { Components } from "formiojs";
+import Field from 'formiojs/components/fieldset/Fieldset'
+const panel = Components.components.field
+class AccordionCustomComp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,21 +71,29 @@ const AccordionCustomComp = class extends Component {
               className={`accordion-prim ${this.state.activeAccordionIndex === index ? "open" : ""}`}
               style={{ cursor: "pointer" }}
             >
-              <span className="arrow">{this.state.activeAccordionIndex === index ? "▼" : "►"}</span>
+              <span className="arrow">
+                {this.state.activeAccordionIndex === index ? "▼" : "►"}
+              </span>
               {accordion.label}
             </div>
             {this.state.activeAccordionIndex === index && (
               <div className="accordion-ans">
-                Accordion Content
-                {'&&&&&&&&&&&&'}
+                {/* {Field} */}
               </div>
             )}
+            <button
+              onClick={() => {
+                console.log();
+              }}
+            >
+              sssssss
+            </button>
           </div>
         ))}
       </div>
     );
   }
-};
+}
 
 export default class Accordion extends ReactComponent {
   static get builderInfo() {
@@ -57,12 +109,14 @@ export default class Accordion extends ReactComponent {
 
   static schema() {
     return ReactComponent.schema({
-      type: "accordionCustomComp",
+      type: "accordion",
       label: "Default Label",
-      components: [
+      components: [ 
         {
-          type: "container",
-          key: "components",
+          type: "nestedComponent",
+          key: "nestedComponentKey",
+          label: "Nested Component",
+          // schema: panel.schema(),
           components: [],
         },
       ],
@@ -74,6 +128,7 @@ export default class Accordion extends ReactComponent {
   attachReact(element) {
     return ReactDOM.render(
       <AccordionCustomComp
+        // test={NestedComponent} 
         component={this.component}
         value={this.dataValue}
         onChange={this.updateValue}

@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { FormBuilder, Components } from '@formio/react';
 import './style.css';
 import AccordionCustomComp from "../../customcomponents/Accordion";
+// import CheckMatrix from '../../customcomponents/CheckMatrix'
 
 // Components.setComponents(components);
-Components.setComponent('accordionCustomComp', AccordionCustomComp);
+Components.setComponent('accordion', AccordionCustomComp);
+// Components.setComponent('checkmatrix', CheckMatrix);
 
 const FormBuilderPage = () => {
     const [formConfig, setFormConfig] = useState({
@@ -30,6 +32,7 @@ const FormBuilderPage = () => {
                             basic: {
                                 components: {
                                     AccordionCustomComp: true
+                                    // CheckMatrix: true
                                 }
                             },
                             advanced: false
